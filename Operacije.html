@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="number" id="a" placeholder="First Number"><br>
+    <button onclick="setOperator('+')">+</button>
+    <button onclick="setOperator('-')">-</button>
+    <button onclick="setOperator('*')">*</button>
+    <button onclick="setOperator('/')">/</button><br>
+    <input type="number" id="b" placeholder="Second Number"><br>
+    <button onclick="calculator()" id="button">Result!</button>
+
+    <script type="text/javascript">
+
+
+        var operator = '';
+
+        function setOperator(op) {
+
+            operator = op;
+
+        }
+
+        function calculator() {
+            let firstNumber = document.getElementById("a").value;
+            let secondNumber = document.getElementById("b").value;
+
+
+            switch (operator) {
+                case "+":
+                    {
+                        const result = parseInt(firstNumber) + parseInt(secondNumber);
+                        alert("Result is: " + result);
+                        break;
+                    }
+
+                case "-":
+                    {
+                        const result = firstNumber - secondNumber;
+                        alert("Result is: " + result);
+                        break;
+                    }
+                case "*":
+                    {
+                        const result = firstNumber * secondNumber;
+                        alert("Result is: " + result);
+                        break;
+                    }
+                case "/":
+                    {
+                        const result = firstNumber / secondNumber;
+                        alert("Result is: " + result);
+                        break;
+                    }
+                default: {
+                    alert("Operation is invalid");
+                }
+            }
+        }
+
+
+    </script>
+
+</body>
+
+</html>
